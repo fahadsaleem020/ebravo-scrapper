@@ -23,7 +23,7 @@ const filePath = path_1.default.join(__dirname, "/iptv.m3u");
 const host = "http://ebravo.pk/classic/";
 const port = process.env.PORT || 3000;
 const app = (0, express_1.default)();
-app.use((0, connect_timeout_1.default)("120s"));
+app.use((0, connect_timeout_1.default)("600s"));
 app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         fs_1.default.unlink(filePath, (error) => null);
@@ -58,4 +58,4 @@ const generateFile = (channels) => {
         });
     });
 };
-app.listen(port, () => console.log(`server is running on port: ${port}`));
+module.exports = app;
