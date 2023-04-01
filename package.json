@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev -r tsconfig-paths/register src/app.ts",
-    "nodemon": "nodemon tsconfig-paths/register src/app.ts"
+    "nodemon": "nodemon  dist/app.js"
   },
   "author": "palari",
   "license": "ISC",

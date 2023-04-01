@@ -16,8 +16,8 @@ interface Channel {
   url: string;
 }
 
-app.use(timeout("120s"));
-app.get("/iptv", async (req, res) => {
+app.use(timeout("600s"));
+app.get("/", async (req, res) => {
   try {
     fs.unlink(filePath, (error) => null);
     const web = await (await axios(target)).data;

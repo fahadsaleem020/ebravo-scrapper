@@ -24,7 +24,7 @@ const host = "http://ebravo.pk/classic/";
 const port = process.env.PORT || 3000;
 const app = (0, express_1.default)();
 app.use((0, connect_timeout_1.default)("120s"));
-app.get("/iptv", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+app.get("/", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         fs_1.default.unlink(filePath, (error) => null);
         const web = yield (yield (0, axios_1.default)(target)).data;
