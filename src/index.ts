@@ -18,8 +18,16 @@ interface Channel {
 
 app.use(timeout("600s"));
 
-app.get("/online", (req, res) => res.end("online"));
-app.get("/api/online", (req, res) => res.end("online"));
+app.get("/online", (req, res) => {
+  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+  res.end("online");
+});
+app.get("/api/online", (req, res) => {
+  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
+  res.end("online");
+});
 app.get("/", async (req, res) => {
   try {
     fs.unlink(filePath, (error) => null);
