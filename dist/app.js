@@ -58,4 +58,4 @@ const generateFile = (channels) => {
         });
     });
 };
-module.exports = app;
+app.listen(port, () => console.log(`server is running on port: ${port}`));
