@@ -5,7 +5,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "baseUrl": "./",
-    "outDir": "dist",
+    "outDir": "api",
     "removeComments": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,

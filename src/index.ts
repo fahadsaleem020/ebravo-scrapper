@@ -17,6 +17,9 @@ interface Channel {
 }
 
 app.use(timeout("600s"));
+
+app.get("/online", (req, res) => res.end("online"));
+app.get("/api/online", (req, res) => res.end("online"));
 app.get("/", async (req, res) => {
   try {
     fs.unlink(filePath, (error) => null);
@@ -53,4 +56,6 @@ const generateFile = (channels: Channel[]): Promise<string> => {
   });
 };
 
-app.listen(port, () => console.log(`server is running on port: ${port}`));
+// app.listen(port, () => console.log(`server is running on port: ${port}`));
+
+module.exports = app;
