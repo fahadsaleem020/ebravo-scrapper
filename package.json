@@ -1,7 +1,7 @@
 {
   "name": "tv-scrapper",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
