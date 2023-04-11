@@ -1,6 +1,6 @@
-# Ebravo TV Scrapper
+# Ebravo TV Scraper
 
-This is a Node.js server code that generates an IPTV playlist file based on the channels extracted from a web page. The generated playlist file can be used to stream video content from various channels.
+This is a Node.js server code that generates an IPTV playlist file based on the channels extracted from the web page at "http://ebravo.pk/classic/webtv?cat=All". The generated playlist file can be used to stream video content from various channels.
 
 ## Dependencies
 
@@ -25,13 +25,10 @@ To install the dependencies and run the server, follow these steps:
 
 The server will listen on the specified port (or default port 3000) and generate an IPTV playlist file at the specified file path (or default file path "./iptv.m3u").
 
-## Usage
-
 ### Endpoints
 
 The server exposes the following endpoints:
 
-- `/online`: Returns a "online" response when accessed, indicating that the server is running.
 - `/`: Generates an IPTV playlist file based on the channels extracted from a web page and serves it as a download when accessed.
 
 ### Functions
@@ -63,7 +60,7 @@ The server code includes the following configuration variables:
 - `host`: The host URL used to construct the complete URL of each channel.
 - `port`: The port on which the server listens.
 
-These configuration variables can be adjusted to customize the behavior of the server.
+These configuration variables are set in the code and should not be modified unless you want to scrape from a different URL or change the file path or port.
 
 ## License
 
@@ -71,4 +68,4 @@ This code is open source and available under the [MIT License](LICENSE).
 
 ## Conclusion
 
-This Node.js server provides a simple way to generate an IPTV playlist file based on the channels extracted from a web page. By following the installation and usage instructions, you can set up your own IPTV server and customize it according to your requirements.
+This Node.js server provides a simple way to generate an IPTV playlist file based on the channels extracted from the web page at "http://ebravo.pk/classic/webtv?cat=All". By following the installation and usage instructions, you can set up your own IPTV server and customize it according to your requirements.
