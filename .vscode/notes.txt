@@ -1,0 +1,7 @@
+1.scrap all channels and return the list of data(title, url, thumb) in response on page load
+2.client should be able to preview channel data like title, thumb and stream video.
+3.client should be able to select one more data to be send to server to generate a downloadable .m3u file.
+4.since asynchronous iterations are random, use socket.io to visualize the scrapping state in client
+5.send individual, multiple or every channel data from client to server, generate and download the .m3u file
+
+

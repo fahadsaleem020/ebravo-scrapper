@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link href="output.css" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="/dist/output.css" /> -->
+    <script defer src="socket.io/socket.io.js"></script>
+
+    <!-- video player plugin -->
+    <link href="https://vjs.zencdn.net/7.14.3/video-js.css" rel="stylesheet" />
+    <script src="https://vjs.zencdn.net/7.14.3/video.js"></script>
+    <link
+      href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/5.15.0/videojs-contrib-hls.min.js"
+    ></script>
+    <!-- video player plugin -->
+
+    <script defer src="tv.js"></script>
+    <title>Document</title>
+  </head>
+  <body class="min-h-screen bg-[url('background.svg')] bg-cover font-inter">
+    <header class="container mx-auto py-5">
+      <section class="flex gap-2 h-14">
+        <div
+          class="join grow border border-gray-300 focus-within:outline outline-1 focus-within:outline-blue-gray-400"
+        >
+          <i
+            class="fa fa-search bg-white join-item px-4 pr-0 flex items-center text-xl text-gray-400"
+            aria-hidden="true"
+          ></i>
+          <input
+            class="input focus:outline-none grow join-item h-full border-0"
+            placeholder="search and hit enter key"
+          />
+        </div>
+        <select
+          title="Categories"
+          class="select select-bordered focus:outline-none h-full font-medium capitalize"
+        >
+          <option>all genres</option>
+          <option>documentry</option>
+          <option>education</option>
+          <option>entertainment</option>
+          <option>food & health</option>
+          <option>kids</option>
+          <option>movies</option>
+          <option>music</option>
+          <option>regional</option>
+          <option>religious</option>
+          <option>sports</option>
+          <option>kids</option>
+        </select>
+      </section>
+    </header>
+
+    <main class="container mx-auto">
+      <section class="flex justify-between pt-5 pb-3">
+        <div class="flex gap-1 h-11">
+          <div
+            class="btn h-full btn-primary rounded-full capitalize no-animation font-medium"
+          >
+            web tv
+          </div>
+          <div
+            class="btn h-full rounded-full capitalize border border-gray-400 bg-transparent hover:bg-gray-100 no-animation font-medium"
+          >
+            movies
+          </div>
+        </div>
+        <div class="flex gap-2 h-14">
+          <div
+            class="view-btn btn h-full no-animation w-14 btn-square border-violet-300 text-blue-gray-500 bg-gradient-to-r from-gray-100 to-purple-100 text-lg"
+          >
+            <i class="fa fa-th-large" aria-hidden="true"></i>
+          </div>
+          <div
+            class="view-btn btn h-full no-animation w-14 btn-square border-0 border-violet-300 text-blue-gray-500 bg-gradient-to-r from-gray-100 to-purple-100 text-lg"
+          >
+            <i class="fa fa-list-ul" aria-hidden="true"></i>
+          </div>
+          <button
+            class="downloadBtn btn btn-outline h-full ml-2 border-blue-300 text-blue-500 hover:bg-blue-gray-600 hover:border-blue-gray-600"
+          >
+            Download Playlist
+          </button>
+        </div>
+      </section>
+      <section
+        class="mt-3 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-5 gap-2"
+      ></section>
+    </main>
+
+    <dialog class="modal modal-open dialogModal backdrop-blur-sm">
+      <div class="modal-box rounded-3xl flex items-center justify-between p-10">
+        <div id="dialog">
+          <h1 class="text-gray-500 !m-0 text-lg capitalize font-semibold !mb-1">
+            scrapping in progress...
+          </h1>
+          <p class="text-blue-600 flex items-center gap-2 scale-0 transition">
+            <span class="loading loading-spinner loading-sm"></span
+            ><span>re-fetching</span>
+          </p>
+        </div>
+        <div class="radial-progress text-blue-gray-600" style="--value: 0">
+          0%
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="modal videoModal backdrop-blur-sm">
+      <div
+        class="modal-box w-2/3 h-2/3 max-w-full flex items-center justify-between p-0"
+      >
+        <video
+          id="modalVideoPlayer"
+          class="w-full h-full video-js vjs-theme-sea vjs-big-play-centered"
+          controls
+        >
+          <source src="video.mp4" />
+          <source src="video.mp4" type="application/x-mpegURL" />
+        </video>
+      </div>
+    </dialog>
+
+    <div class="toastContainer toast-bottom toast-center z-[999]"></div>
+  </body>
+</html>
