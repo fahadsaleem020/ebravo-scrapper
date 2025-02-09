@@ -8,10 +8,10 @@ import http from "http";
 import path from "path";
 import fs from "fs";
 
-// const moviesTarget = "http://ebravo.pk/classic/webtv?cat=All";
-const tvTarget = `http://ebravo.pk/classic/webtv?cat=`;
+// const tvTarget = `http://ebravo.pk/classic/webtv?cat=`;
+const tvTarget = `https://ebuzz.world/classic/webtv?cat=`;
 const file = path.join(__dirname, "/iptv.m3u");
-const host = "http://ebravo.pk/classic/";
+const host = "https://ebuzz.world/classic/";
 const port = process.env.PORT || 3000;
 const app = express();
 
