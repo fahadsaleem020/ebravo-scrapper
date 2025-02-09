@@ -5,7 +5,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
-    "start": "node dist/index.js",
+    "start": "nodemon dist/index.js",
     "watch": "npx tailwindcss -i ./input.css -o ./dist/output.css --watch"
   },
   "author": "palari",
