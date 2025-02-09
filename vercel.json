@@ -6,7 +6,7 @@
         "use": "@vercel/node"
       },
       {
-        "src": "dist/**",
+        "src": "public/**",
         "use": "@vercel/static"
       }
     ],
